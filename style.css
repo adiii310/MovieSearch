@@ -1,0 +1,108 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root{
+    --blue :    #afdae0;
+    --orange: #f7b368;
+    --dark-grey: #333333;
+    --navy-blue: #000080;
+    --dark-brown: #593c1f;
+    --pink: pink;
+}
+
+body{
+    background-color: var(--blue);
+}
+#search-box{
+    width:100%;
+    margin:5px;
+}
+#search{
+    width:50%;
+    display: block;
+    margin:5px auto;
+    padding:5px 10px 5px 25px;
+    border-radius: 12px;
+    outline:none;
+    border:3px solid pink;
+    font-size: 18px;
+    background-color: transparent;
+    color:var(--navy-blue);
+    letter-spacing:1px;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 2px 2px 2px black inset,2px 2px 2px black;
+}
+#movie-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0px 5px;
+    /* background-color: red;
+    border:2px solid red; */
+}
+.movie-box{
+    /* display: inline-block; */
+    /* position: relative; */
+    width:calc(25% - 10px);
+    height:300px;
+    border-radius: 5px;
+    overflow: hidden;
+    border:3px solid pink;
+    cursor: pointer;
+    margin:5px;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+.overview{
+    width:100%;
+    height:auto;
+    padding:5px;
+    background-color: var(--pink);
+    color:var(--navy-blue);
+    transition: 0.8s ease-out;
+    transform: translateY(0%);
+    opacity: 0;
+}
+.movie-box:hover .overview{
+    transform: translateY(-100%);
+    opacity: 1;
+}
+
+@media  screen and ( max-width: 1050px) {
+    .movie-box{
+    width:calc(33.33% - 10px);
+
+    }
+    #search-box{
+    width:100%;
+    margin:5px;
+}
+}
+@media  screen and ( max-width: 600px) {
+    .movie-box{
+    width:calc(50% - 10px);
+
+    }
+    #search{
+        width:75%;
+    }
+}
+@media  screen and ( max-width: 450px) {
+    .movie-box{
+    width:calc(100% - 10px);
+
+    }
+    #search{
+        width:85%;
+    }
+        
+}
