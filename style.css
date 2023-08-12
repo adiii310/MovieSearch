@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* background-color: pink;
+    border:2px solid black; */
 
 }
 :root{
@@ -14,11 +16,56 @@
 }
 
 body{
-    background-color: var(--blue);
+    background-color: var(--orange);
 }
 #search-box{
-    width:100%;
+    width:calc(100% - 10px);
     margin:5px;
+    display: flex;
+}
+.colors{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+
+}
+.color{
+    background-color: hotpink;
+    border-radius: 5px;
+    padding: 12px;
+}
+.colorbtn{
+    width: 25px;
+    height: 25px;
+    /* background-color: red; */
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#color1{
+    background-color: var(--blue);
+}
+#color2{
+    background-color: var(--orange);
+}
+#color3{
+    background-color: var(--dark-brown);
+}
+#color4{
+    background-color: var(--navy-blue);
+}
+#color5{
+    background-color: var(--dark-grey);
+
+}
+#color6{
+    background-color: var(--pink);
+
 }
 #search{
     width:50%;
@@ -48,12 +95,13 @@ body{
     /* display: inline-block; */
     /* position: relative; */
     width:calc(25% - 10px);
-    height:300px;
+    height:500px;
     border-radius: 5px;
     overflow: hidden;
-    border:3px solid pink;
+    border:5px solid transparent;
     cursor: pointer;
     margin:5px;
+    transition: all 1s ease;
 }
 img{
     width: 100%;
@@ -64,17 +112,17 @@ img{
 }
 .overview{
     width:100%;
-    height:auto;
+    height:100%;
     padding:5px;
     background-color: var(--pink);
     color:var(--navy-blue);
     transition: 0.8s ease-out;
-    transform: translateY(0%);
-    opacity: 0;
+    /* transform: translateY(0%);
+    opacity: 0; */
 }
-.movie-box:hover .overview{
-    transform: translateY(-100%);
-    opacity: 1;
+.movie-box:hover{
+    border: 5px solid red;
+    opacity: 0.8;
 }
 
 @media  screen and ( max-width: 1050px) {
@@ -95,6 +143,13 @@ img{
     #search{
         width:75%;
     }
+    #search-box{
+        flex-direction: column;
+       
+    }
+    .colors{
+        justify-content: center;
+    }
 }
 @media  screen and ( max-width: 450px) {
     .movie-box{
@@ -105,4 +160,7 @@ img{
         width:85%;
     }
         
+}
+.style{
+    transform: rotateY(360deg);
 }
